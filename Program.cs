@@ -1,5 +1,4 @@
 ﻿Console.WriteLine("Ввод массива с клавиатуры? Нажми 1| Выбрать массив. Нажми 2");
-Console.WriteLine();
 int b = Convert.ToInt16(Console.ReadLine());
 
 string[] arrayFirst = { "Hello", "2", "word", ":-)" };
@@ -13,7 +12,7 @@ int CountIndexArrayLessThree(string[] array)
     {
         if (array[i].Length <= 3)
         {
-            j += 0;
+            j += 1;
         }
     }
     return j;
@@ -46,22 +45,22 @@ void PrintArray(string[] array)
 if (b == 1)
 {
 
-    Console.WriteLine("Введите кол-во строк(цифры): ");
-    int n = Convert.ToInt32(Console.ReadLine());
-    string[] UserArray = new string[n];
+    Console.WriteLine("Сколько строк вы хотите в массиве(цифры): ");
+    int a = Convert.ToInt32(Console.ReadLine());
+    string[] userArray = new string[a];
     void EmptyArray(string[] array)
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < a; i++)
         {
-            Console.Write("Введите строку №{0}:\r\n    ", i + 1);
-            UserArray[i] = Console.ReadLine();
+            Console.Write("Строка №{0}:\r\n    ", i + 1);
+            userArray[i] = Console.ReadLine();
         }
     }
-    EmptyArray(UserArray);
+    EmptyArray(userArray);
     Console.WriteLine();
     Console.WriteLine("Вывод:");
-    ReplaceOldArrayNewArray(ref UserArray, CountIndexArrayLessThree(UserArray));
-    PrintArray(UserArray);
+    ReplaceOldArrayNewArray(ref userArray, CountIndexArrayLessThree(userArray));
+    PrintArray(userArray);
 
 }
 
@@ -99,13 +98,13 @@ if (b == 2)
         ReplaceOldArrayNewArray(ref arrayThird, CountIndexArrayLessThree(arrayThird));
         PrintArray(arrayThird);
     }
-    else
+    if (c > 2 || c < 1)
     {
-        Console.Write("Не правильный ввод");
+        Console.Write("Необходимо было ввести 1 , 2, 3");
     }
 }
 if (b > 2 || b < 1)
 {
-    Console.Write(" Перезапусти программу, и введи 1 или 2");
+    Console.Write("Необходимо было ввести 1 или 2");
 }
 
